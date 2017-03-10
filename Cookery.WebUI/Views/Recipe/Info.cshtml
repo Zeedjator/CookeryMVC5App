@@ -1,0 +1,44 @@
+﻿@model Cookery.Domain.Recipe
+<div class="well">
+    @if (Model.ImageData != null)
+    {
+        <div class="pull-left" style="margin-right: 10px">
+            <img class="img-thumbnail"
+                 src="@Url.Action("GetImage", "Recipe",
+                          new {Model.RecipeID})"/>
+        </div>
+    }
+    <br/>
+    <h3>
+        <strong>@Model.Name</strong>
+    </h3>
+    <br/>
+    <h4><strong>Описание:</strong></h4>
+    <p>
+        <span class="lead">@Model.Description</span>  
+    </p>
+    <br/>
+    <h5><strong>Ингредиенты:</strong></h5>
+    <p>
+        <ul>
+            @foreach (var i in @Model.Ingredients)
+            {
+                <li><span> @i.Name</span></li>
+            }
+        </ul>
+    </p>
+</div>
+
+@*@if (Model.Instructions != null)
+{
+    <h3>Инструкция, блять:</h3>
+    <div class="well">
+        @foreach (var s in @Model.Instructions.FirstOrDefault().InstructionSteps)
+        {
+            <h3><strong>Описание:</strong></h3>
+            <p>
+                <span class="lead">@s.Description</span>
+            </p>
+        }
+    </div>
+}*@
