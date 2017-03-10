@@ -15,5 +15,9 @@
 }
 
 <div class="btn-group pull-right">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory, searchValue = @ViewBag.SearchValue }))
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new {page = x, category = Model.CurrentCategory, searchValue = @ViewBag.SearchValue}))
+</div>
+
+<div>
+    @* Тест гита *@
 </div>
